@@ -32,7 +32,6 @@ from sklearn.metrics import mean_squared_error, r2_score
 
 data = pd.read_csv("weather.csv")
 
-
 X = data[['hum', 'pressure', 'wind_speed', 'illumination', 'co2']]
 
 X = X.fillna(X.mean())
@@ -57,12 +56,10 @@ print("Accuracy (%):", accuracy_pollution)
 
 print("R2 Score:", r2_pollution)
 
-
 print("RMSE:", rmse_pollution)
 print("R2 Score:", r2_pollution)
 
 y_temp = data['tem'].fillna(data['tem'].mean())
-
 X_train, X_test, y_train, y_test = train_test_split(
     X, y_temp, test_size=0.2, random_state=42
 )
@@ -96,7 +93,6 @@ r2_energy = r2_score(y_test, energy_pred)
 accuracy_energy = r2_energy * 100
 print("\n⚡ Energy Prediction (TSR)")
 print("Accuracy (%):", accuracy_energy)
-
 
 print("RMSE:", rmse_energy)
 print("R2 Score:", r2_energy)
